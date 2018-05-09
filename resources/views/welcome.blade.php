@@ -64,7 +64,7 @@
             }
         </style>
     </head>
-    <body>
+    <body  onload="startTime()">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -79,7 +79,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    hello word !!! push to  github
+                    你就是个傻瓜!<br>
+                   <p> 当前时间<div id="timer"></div></p>
                 </div>
 
                 <div class="links">
@@ -92,4 +93,23 @@
             </div>
         </div>
     </body>
+    <script type="text/javascript">
+        function startTime()
+        {
+            var today=new Date()
+            var h=today.getHours()
+            var m=today.getMinutes()
+            var s=today.getSeconds()
+            m=checkTime(m)
+            s=checkTime(s)
+            document.getElementById('timer').innerHTML=h+":"+m+":"+s
+            t=setTimeout('startTime()',500)
+        }
+        function checkTime(i)
+        {
+            if (i<10)
+            {i="0" + i}
+            return i
+        }
+    </script>
 </html>
