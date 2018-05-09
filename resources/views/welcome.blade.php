@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    我的第一个Laravel环境
+                    hello word !!! push to  github
                 </div>
 
                 <div class="links">
