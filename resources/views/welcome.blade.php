@@ -79,16 +79,16 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    你就是个傻瓜!<br>
+                    hello word !<br>
                    <p> 当前时间<div id="timer"></div></p>
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">你好</a>
+                    <a href="https://laravel.com/docs">文档</a>
                     <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
+                    <a href="https://laravel-news.com">最新动态</a>
                     <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://github.com/laravel/laravel">版本库</a>
                 </div>
             </div>
         </div>
