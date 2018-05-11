@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/user/{id}','UserController@show')->name('user.show');
 
 Route::get('/test','UserController@test')->name('user.test');
+Route::get('/user','UserController@store');//新增用户

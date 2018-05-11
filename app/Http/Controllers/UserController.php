@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 
@@ -13,7 +14,6 @@ class UserController extends Controller
         return response()->json(['status'=>$id]);
     }
     public function test(){
-        session(['a'=>555]);
         $aa = [
             'name' => route('user.show',1),
             'currentUrl' => URL::current(),
@@ -21,4 +21,16 @@ class UserController extends Controller
         ];
         return $aa;
     }
+
+    public function store(Request $request)
+    {
+        $user = new User;
+        $user->name = 'test';
+        $user->email = 'test@qq.com';
+        $user->password = "123456";
+        $ret = $user->save();
+        return $ret;
+
+    }
+
 }
