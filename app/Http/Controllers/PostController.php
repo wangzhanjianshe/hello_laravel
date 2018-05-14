@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
+use App\Post as Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -15,6 +15,9 @@ class PostController extends Controller
     public function index()
     {
         //
+        $aa = Post::all()->toArray();
+        return var_dump($aa);
+
     }
 
     /**
@@ -36,6 +39,13 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+        $post = new Post;
+        $post->title = '标题';
+        $post->text = '内容';
+        $post->user_id = 1;
+        $res = $post->save();
+        return $res;
+
     }
 
     /**

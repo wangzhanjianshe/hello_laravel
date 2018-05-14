@@ -22,15 +22,16 @@ class UserController extends Controller
         return $aa;
     }
 
-    public function store(Request $request)
+    public function store()
     {
         $user = new User;
         $user->name = 'test';
-        $user->email = 'test@qq.com';
+        $user->email = '111atest@qq.com';
         $user->password = "123456";
         $ret = $user->save();
         return $ret;
 
     }
+
 
 }

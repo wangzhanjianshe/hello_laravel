@@ -16,7 +16,11 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
 Route::get('/user/{id}','UserController@show')->name('user.show');
 
 Route::get('/test','UserController@test')->name('user.test');
 Route::get('/user','UserController@store');//新增用户
+
+Route::get('/post','PostController@store');//新增文章
+Route::get('/post/index','PostController@index');//新增文章11
