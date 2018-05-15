@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Post as Post;
+use Illuminate\Filesystem\Cache;
+use Illuminate\Contracts\Cache\Repository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -15,8 +18,12 @@ class PostController extends Controller
     public function index()
     {
         //
-        $aa = Post::all()->toArray();
-        return var_dump($aa);
+        $list = cache('posts_list');
+        if(!$list){
+            $list = Post::all();//->toArray();
+            cache(['posts_list'=>$list],5);
+        }
+        return $list;
 
     }
 
@@ -57,6 +64,16 @@ class PostController extends Controller
     public function show(Post $post)
     {
         //
+        $post = new Post;
+    }
+
+    public function info($id)
+    {
+        $list = DB::table('post')->select('title','id','user_id')->get()->toArray();
+        $count = DB::table('post')->count();
+//        $list = DB::table('post')->where('id',$id)->first();
+        return ['list'=>$list,'count'=>$count];
+
     }
 
     /**
