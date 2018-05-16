@@ -71,8 +71,8 @@ return [
         'disk' => 'admin',
 
         'directory' => [
-            'image' => 'images',
-            'file'  => 'files',
+            'image' => '$form->image($column)',
+            'file'  => '$form->file($column)',
         ],
     ],
 
@@ -151,6 +151,8 @@ return [
      * Settings for extensions.
      */
     'extensions' => [
-
+        'media-manager' => [
+            'disk' => 'public'   // 指向config/filesystem.php中设置的disk
+        ],
     ],
 ];
