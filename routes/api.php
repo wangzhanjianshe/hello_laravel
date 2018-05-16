@@ -25,3 +25,11 @@ Route::get('/user','UserController@store');//新增用户
 Route::get('/post','PostController@store');//新增文章
 Route::get('/post/index','PostController@index');//新增文章11
 Route::get('/post/info/{id?}','PostController@info');
+
+/******指定路由的命名空间*******/
+Route::group(['namespace' => 'Api'], function(){
+    Route::get('/index','IndexController@index');//新增用户
+    Route::get('/user','UserController@index');
+
+
+});
